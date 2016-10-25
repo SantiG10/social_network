@@ -1,8 +1,14 @@
-- user = "Santiago"
+-# - user = "Santiago"
 / esto es pa utilizar codigo ruby
 %h1 Página Principal
-%p
-  Hola a todos..!
-  usuario
-  = user
+-if user_signed_in?
+  = "Hola Usuario: " + current_user.name
+  %br
+  =link_to "Cerrar sesión", destroy_user_session_path, method: :delete
+-else
+  %p Hola a todos..!
+-# %p
+-#   Hola a todos..!
+-#   usuario
+-#   = user
   / esto es pa utilizar codigo ruby pero lo imprime
